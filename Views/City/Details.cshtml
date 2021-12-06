@@ -1,0 +1,61 @@
+@model Weather.Models.City
+
+@{
+    ViewData["Title"] = "Thông tin";
+    
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>City</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Tên thành phố
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt class = "col-sm-2">
+            Bang
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.state)
+        </dd>
+        <dt class = "col-sm-2">
+            Quốc gia
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.country)
+        </dd>
+        <dt class = "col-sm-2">
+            Longitude
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.lon)
+        </dd>
+        <dt class = "col-sm-2">
+            Latitude
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.lat)
+        </dd>
+        <dt class = "col-sm-2">
+            Nhiệt độ hiện tại
+        </dt>
+        <dd class = "col-sm-10">
+            @ViewData["temp"]
+        </dd>
+        <dt class = "col-sm-2">
+            Độ ẩm hiện tại
+        </dt>
+        <dd class = "col-sm-10">
+            @ViewData["humidity"]
+        </dd>
+    </dl>
+    
+</div>
+<div>
+    <a href="/">Về trang chủ</a>
+</div>

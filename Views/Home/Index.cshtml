@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Current Weather</h1>
+    <p>Chọn thành phố</p>
+</div>
+<form asp-controller="City" asp-action="Index" method="GET">
+    <p>
+        Tên thành phố: <input type="text" name="SearchString" required>
+        <input type="submit" value="Tìm"/>
+    </p>
+</form>

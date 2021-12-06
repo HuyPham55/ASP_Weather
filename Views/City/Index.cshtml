@@ -1,0 +1,44 @@
+@model IEnumerable<Weather.Models.City>
+
+@{
+    ViewData["Title"] = "Chọn thành phố";
+}
+
+<h1>Thành phố</h1>
+<form asp-controller="City" asp-action="Index" method="GET" onsubmit="return validateForm()">
+    <p>
+        Tên thành phố: <input type="text" name="SearchString" required>
+        <input type="submit" value="Tìm"/>
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Tên thành phố
+            </th>
+            <th>
+                Quốc gia
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.country)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.id">Xem</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
